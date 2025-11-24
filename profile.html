@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin GNS3Sport</title>
+    <link rel="icon" type="image/x-icon" href="assets/gns3_94911.svg">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9; 
+    overflow-x: hidden;
+}
+
+
+.hero-founder {
+    padding: 20px 0;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.founder-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+
+.founder-text {
+    flex: 1; 
+    max-width: 600px; 
+    z-index: 2; 
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #9b59b6; 
+    margin-bottom: 10px;
+}
+
+.founder-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.founder-text .role {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.founder-text .bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 35px;
+    border-left: 4px solid #9b59b6;
+    padding-left: 20px;
+}
+
+.founder-cta {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.btn-primary {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px -10px rgba(155, 89, 182, 0.5);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px -10px rgba(155, 89, 182, 0.7);
+}
+
+.social-links a {
+    color: #333;
+    font-size: 1.3rem;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #9b59b6;
+    transform: translateY(-3px);
+}
+
+.founder-image-area {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
+    height: 600px; 
+    width: 50%;
+}
+
+
+/* .blob-shape {
+    position: absolute;
+    width: 350px;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(113, 183, 230, 0.2), rgba(155, 89, 182, 0.3));
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    animation: morph 8s ease-in-out infinite;
+} */
+
+.main-photo {
+    position: relative;
+    top: -55px;
+    z-index: 5; 
+    height: 100%; 
+    width: auto;
+    object-fit:cover;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.30)); 
+    transition: all 0.3s ease;
+}
+.main-photo:hover {
+    padding-right: 30px;
+    padding-bottom: 20px;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.60)); 
+}
+
+
+@media (max-width: 968px) {
+    .founder-container {
+        flex-direction: column-reverse; 
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .founder-text {
+        padding-top: 40px;
+    }
+
+    .founder-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .founder-cta {
+        justify-content: center;
+    }
+
+    .founder-image-area {
+        height: 350px; 
+        width: 100%;
+    }
+
+    .blob-shape {
+        width: 300px;
+        height: 300px;
+    }
+
+    .founder-text .bio {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+/* Animasi Blob (Opsional) */
+@keyframes morph {
+    0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+    34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+    67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+}
+    </style>
+</head>
+<body>
+
+    <section class="hero-founder">
+        <div class="container founder-container">
+            
+            <div class="founder-text">
+                <span class="eyebrow">THE SIGMA MIND BEHIND THE TEAM</span>
+                <h1>Gyanrendra Nayaran Wiratmaja</h1>
+                <h2 class="role">Founder & CEO</h2>
+                
+                <em>
+                <p class="bio">
+                    "Layaknya topologi jaringan yang terkonfigurasi dengan baik membutuhkan zero latency dan routing sempurna, tim Esport juara membutuhkan komunikasi dan strategi tanpa celah. Berasal dari Cikampek dan kini menempuh studi Teknologi Rekayasa Komputer di IPB, saya menerapkan kemampuan analisis teknis saya ke dalam arena permainan. GNS3 Esport adalah cetak biru (blueprint) saya untuk membuktikan bahwa kedisiplinan dan strategi berbasis data adalah kunci untuk menguasai papan skor."
+                </p>
+                </em>
+
+                <div class="founder-cta">
+                    <a href="https://wa.me/6281319729739" target="_blank" class="btn-primary">Connect with Me</a>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/friedrich_12107?igsh=ZXE0N2kza2dpMDUz" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/friedrich_12107?igsh=ZXE0N2kza2dpMDUz" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/friedrich_12107?igsh=ZXE0N2kza2dpMDUz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="founder-image-area">
+                <div class="blob-shape"></div>
+                <img src="assets/founder.png" alt="Foto Founder GNS3" class="main-photo">
+            </div>
+
+          
+        </div>
+    </section>
+</body>
+</html>

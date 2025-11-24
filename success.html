@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+    <link rel="icon" type="image/x-icon" href="assets/gns3_94911.svg">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Style sederhana khusus halaman ini */
+        .success-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            object-position: bottom;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+            border: 3px solid #9b59b6;
+        }
+        .data-group {
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .join-wa {
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .join-wa .data-label {
+            display: block;
+            margin-bottom: 7px;
+        }
+        
+        .data-label { font-weight: bold; color: #333; }
+        .data-value { margin-left: 10px; color: #666; }
+        h3 {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .json-preview {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 12px;
+            margin-top: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button input {
+            width: 100%;
+            outline: none;
+            border: none;
+            padding: 5px 10px 5px 10px;
+            background-color: #913db3d5;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 8px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button input:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -10px rgba(155, 89, 182, 0.7);
+        }
+
+        .button-nf input:hover {
+            width: 100%;
+            outline: none;
+            border: none;
+            padding: 7px 13px 7px 13px;
+            background-color: #e42a0ad5;
+            color: #fff;
+            font-weight: 600;
+            font-size: 17px;
+            border-radius: 8px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <h2 style="text-align: center; color: #9b59b6;">Registration Successful!</h2>
+        <br>
+        
+        <img id="display-picture" src="" alt="Profile Picture" class="profile-img">
+
+        <div class="data-group">
+            <span class="data-label">Full Name:</span>
+            <span id="display-fullname" class="data-value"></span>
+        </div>
+        <div class="data-group">
+            <span class="data-label">Username:</span>
+            <span id="display-username" class="data-value"></span>
+        </div>
+        <div class="data-group">
+            <span class="data-label">Email:</span>
+            <span id="display-email" class="data-value"></span>
+        </div>
+        <div class="data-group">
+            <span class="data-label">Phone:</span>
+            <span id="display-phone" class="data-value"></span>
+        </div>
+        <div class="data-group">
+            <span class="data-label">Birth Date:</span>
+            <span id="display-date" class="data-value"></span>
+        </div>
+        <div class="data-group">
+            <span class="data-label">Roles:</span>
+            <span id="display-roles" class="data-value"></span>
+        </div>
+        <div class="join-wa">
+            <span class="data-label">Please Join WA Group for New Information</span>
+            <span class="data-value"><a href="https://chat.whatsapp.com/ESA9TMiIqdL7zfdZquTA7L?mode=hqrc" target="_blank"><i class="fa-solid fa-link"></i></a></span>
+        </div>
+
+        <h3>Raw JSON Data:</h3>
+        <pre id="json-output" class="json-preview"></pre>
+
+        <div class="button" style="margin-top: 20px;">
+            <a href="index.html" style="text-decoration: none;">
+                <input type="button" value="Back to Home">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // SCRIPT KHUSUS HALAMAN SUKSES
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Ambil data string dari localStorage
+            const storedData = localStorage.getItem('registrationData');
+
+            if (storedData) {
+                // 2. Parse string JSON kembali menjadi Object JavaScript
+                const userData = JSON.parse(storedData);
+
+                // 3. Tampilkan ke elemen HTML
+                document.getElementById('display-fullname').textContent = userData.fullName;
+                document.getElementById('display-username').textContent = userData.username;
+                document.getElementById('display-email').textContent = userData.email;
+                document.getElementById('display-phone').textContent = userData.phone
+                const birthDateFormat = userData.birthDate;
+                const [year, month, day] = birthDateFormat.split('-')
+                const formatedDate = `${day}-${month}-${year}`;
+                document.getElementById('display-date').textContent = formatedDate
+                
+                document.getElementById('display-roles').textContent = userData.roles.join(', ');
+
+                if (userData.picture) {
+                    document.getElementById('display-picture').src = userData.picture;
+                }
+
+                document.getElementById('json-output').textContent = JSON.stringify(userData, null, 4);
+
+            } else {
+                const container = document.querySelector('.success-container');
+    
+
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <i class="fa-solid fa-circle-exclamation" style="font-size: 50px; color: #e74c3c; margin-bottom: 20px;"></i>
+                        
+                        <h2 style="color: #e74c3c; margin-bottom: 10px;">Oops! No Data Found</h2>
+                        <p style="color: #666; margin-bottom: 30px;">It seems you haven't registered yet or the data has been cleared.</p>
+                        
+                        <div class="button button-nf">
+                            <a href="index.html" style="text-decoration: none;">
+                                <input type="button" value="Register Now">
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

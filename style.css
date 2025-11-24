@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+}
+
+.main-container {
+    display: flex;
+}
+
+.logo {
+    max-width: 300px;
+    width: 100%;
+    background: rgb(192, 214, 112);
+    border-right: 2px solid #fff6f6c4;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo .welcome {
+    top: 65px;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 800;
+    position: absolute;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-shadow: 2px 2px #8a6e6e;
+}
+
+.logo .welcome:hover {
+    color: yellow;
+}
+
+.logo .welcome .gh:hover {
+    color: gold;
+}
+
+.logo h1 strong {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.logo h1 {
+    margin-top: -40px;
+    color: #5065c2;
+}
+
+.logo h2 {
+    font-weight: 600;
+    font-size: 15px;
+    color: #427888;
+    position: relative;
+}
+
+.logo a.to-profile {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo p {
+    font-size: 10px;
+    font-weight: 600;
+    display: block;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    color: #866363;
+    
+}
+
+.logo a i.profile-ico{
+    font-size: 10px;
+    font-weight: 600;
+    display: block;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    color: #866363;
+}
+
+.logo p:hover,
+.logo a.to-profile i:hover {
+    color: red;
+}
+
+.logo i {
+    font-size: 40px;
+    color: red;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+}
+
+.container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+    position: relative;
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding-left: 19px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box i {
+    position: absolute;
+    right: 14px;
+    top: 43px;
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.input-box input.has-text ~ label i,
+.input-box input:focus ~ label i {
+    transform: translateY(-25px) scale(0.8);
+    color: #9b59b6;
+    background-color: #fff;
+    padding: 0 5px;
+    z-index: 10; /* Pastikan icon muncul di atas garis border */
+}
+
+.user-details .input-box input:focus {
+    border-color: #9b59b6;
+}
+
+.user-details .input-box input.valid-border,
+.user-details .input-box input[type="file"].has-file {
+    border-color: #9b59b6 !important;
+}
+
+.user-details .input-box input:not([type="file"]):not(:placeholder-shown):valid {
+    border-color: #9b59b6;
+}
+
+.user-details .input-box input:not([type="file"]):not(:placeholder-shown):invalid {
+    border-color: red;
+}
+
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+form .gender-details .category {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.gender-details .category label {
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot {
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+
+/* Role Styles */
+
+.role-details {
+    margin-top: 20px;
+}
+
+.role-details .role-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.role-details .category {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.role-details .category label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.category label {
+    cursor: pointer;
+}
+
+.check {
+    height: 21px;
+    width: 21px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #e7e7e7;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox:hover input ~ .check {
+    border-color: transparent;
+    background-color: #ededed;
+}
+.checkbox input:checked ~ .check {
+    border-color: transparent;
+    background-color: #21a8c0;
+}
+
+.check::after{
+    content: "";
+    width: 4px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox input:focus ~ .check {
+    box-shadow: 0 0 0 4px rgb(255 131 107 / .3);
+}
+
+
+.border-danger {
+    border-color: red !important;
+}
+.text-danger {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #969eb4;
+}
+
+
+
+
+
+form input[type="radio"]{
+    display: none;
+}
+
+form input[type="checkbox"]{
+    display: none;
+}
+
+
+
+form input#picture {
+    padding-top: 7px;
+    padding-left: 0;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+form input[type="file"]::file-selector-button {
+    opacity: 0;
+    width: 10px;
+}
+
+form .button {
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+    border: none;
+}
+
+form .button input:hover {
+    background: linear-gradient(-135deg,#71b7e6,#9b59b6);
+    cursor:pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px -10px rgba(155, 89, 182, 0.7);
+}
+
+
+@media (max-width: 584px) {
+    .main-container{
+        flex-direction: column; 
+    }
+    .logo {
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+    }
+
+    .logo .welcome {
+        display: none;
+    }
+
+    .container {
+        max-width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 8px;
+    }
+
+    form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+    }
+
+    form .gender-details .category {
+    width: 100%;
+    }
+
+    .container form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .role-details .category {
+        width: 100%;
+    }
+
+    .role-details .category label {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .check {
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        margin-right: 7px;
+        border: 2px solid #e7e7e7;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
