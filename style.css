@@ -107,13 +107,19 @@ body {
 }
 
 .logo a.src-code {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+    color: #333;
 }
+
+.logo a.src-code:hover {
+    color: rgb(180, 99, 99);
+}
+
 .logo i.github-ico {
     margin-top: 6px;
     font-size: 40px;
